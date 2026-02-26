@@ -13,7 +13,7 @@
 
 int main() {
   // Área para definição das variáveis para armazenar as propriedades das cidades
-  char estado[20], cidade[20], codCarta[4], estado2[20], cidade2[20], codCarta2[4];
+  char estado[20], cidade[20], codCarta[3], estado2[20], cidade2[20], codCarta2[3];
   int populacao, turismo, populacao2, turismo2;
   float area, pib, area2, pib2;
   //Criei uma var para cada dado pois não consigo armazenar 2 dados em apenas 1
@@ -75,14 +75,30 @@ int main() {
 
   float pibCapita = pib / populacao;
   float pibCapita2 = pib2 / populacao2;
-  
+
+  //Calculo de superpoder
+
+  float superPoder = populacao + area + pib + turismo + pibCapita - densidadePop;
+  float superPoder2 = populacao2 + area2 + pib2 + turismo2 + pibCapita2 - densidadePop2;
   // Área para exibição dos dados da cidade
 
-  printf("Sua primeira carta!\n>Estado: %s\n>Cidade: %s\n>Código: %s\n>População: %d\n>Área: %.3f km²\n>PIB: R$%.2f\n>Pontos de turismo: %d\n>Densidade populacional:%.2f Hab/km²\nPIB per Carpita:R$%.2f\n\n",
-  estado, cidade, codCarta, populacao, area, pib, turismo, densidadePop, pibCapita);
+  printf("Sua primeira carta!\n>Estado: %s\n>Cidade: %s\n>Código: %s\n>População: %d\n>Área: %.3f km²\n>PIB: R$%.2f\n>Pontos de turismo: %d\n>Densidade populacional: %.2f Hab/km²\n>PIB per Capita: R$%.2f\n>SuperPoder: %.2f\n\n",
+  estado, cidade, codCarta, populacao, area, pib, turismo, densidadePop, pibCapita, superPoder);
 
-  printf("Sua segunda carta!\n>Estado: %s\n>Cidade: %s\n>Código: %s\n>População: %d\n>Área: %.3f km²\n>PIB: R$%.2f\n>Pontos de turismo: %d\n>Densidade populacional:%.2f Hab/km²\nPIB per Carpita:R$%.2f\n\n",
-  estado2, cidade2, codCarta2, populacao2, area2, pib2, turismo2, densidadePop2, pibCapita2);
+  printf("Sua segunda carta!\n>Estado: %s\n>Cidade: %s\n>Código: %s\n>População: %d\n>Área: %.3f km²\n>PIB: R$%.2f\n>Pontos de turismo: %d\n>Densidade populacional: %.2f Hab/km²\n>PIB per Capita: R$%.2f\n>SuperPoder: %.2f\n\n",
+  estado2, cidade2, codCarta2, populacao2, area2, pib2, turismo2, densidadePop2, pibCapita2, superPoder2);
+
+  //comparaçao
+
+  printf("Comparação de cada ponto das cartas\nCarta um melhor= (1)/////Carta dois melhor= (2)\n");
+
+  printf("População: (%d)\n", populacao > populacao2);
+  printf("Área: (%d)\n", area > area2);
+  printf("PIB: (%d)\n", pib > pib2);
+  printf("Pontos de turismo: (%d)\n", turismo > turismo2);
+  printf("Densidade populacional: (%d)\n", densidadePop < densidadePop2);
+  printf("PIB per capita: (%d)\n", pibCapita > pibCapita2);
+  printf("SuperPoder: (%d)\n", superPoder > superPoder2);
 
 return 0;
 } 
