@@ -16,7 +16,9 @@ int main() {
   char estado[20], cidade[20], codCarta[4], estado2[20], cidade2[20], codCarta2[4];
   int populacao, turismo, populacao2, turismo2;
   float area, pib, area2, pib2;
-  //Criei uma var para cada dado pois não consigo armazenar 2 dados em apenas 1 ainda
+  //Criei uma var para cada dado pois não consigo armazenar 2 dados em apenas 1
+  
+
 
   // Área para entrada de dados
   printf("Hora de cadastrar sua primeira carta! Insira os dados corretamente.\n");
@@ -39,7 +41,7 @@ int main() {
   printf("Digite o PIB da primeira sua carta: ");
   scanf("%f", &pib);
 
-  printf("Digite os pontos turiscos da sua primeira carta: ");
+  printf("Digite os pontos de turismo da sua primeira carta: ");
   scanf("%d", &turismo);
 
 
@@ -63,16 +65,24 @@ int main() {
   printf("Digite o PIB da sua segunda carta: ");
   scanf("%f", &pib2);
 
-  printf("Digite os pontos turiscos da sua segunda carta: ");
+  printf("Digite os pontos de turismo da sua segunda carta: ");
   scanf("%d", &turismo2);
 
+  //calculo das densidades e pib
+
+  float densidadePop = populacao / area;
+  float densidadePop2 = populacao2 / area2;
+
+  float pibCapita = pib / populacao;
+  float pibCapita2 = pib2 / populacao2;
+  
   // Área para exibição dos dados da cidade
 
-  printf("Sua primeira carta!\n>Estado: %s\n>Cidade: %s\n>Código: %s\n>População: %d\n>Área: %f km²\n>PIB: R$%f\n>Pontos de turismo: %d\n\n",
-  estado, cidade, codCarta, populacao, area, pib, turismo );
+  printf("Sua primeira carta!\n>Estado: %s\n>Cidade: %s\n>Código: %s\n>População: %d\n>Área: %.3f km²\n>PIB: R$%.2f\n>Pontos de turismo: %d\n>Densidade populacional:%.2f Hab/km²\nPIB per Carpita:R$%.2f\n\n",
+  estado, cidade, codCarta, populacao, area, pib, turismo, densidadePop, pibCapita);
 
-  printf("Sua segunda carta!\n>Estado: %s\n>Cidade: %s\n>Código: %s\n>População: %d\n>Área: %.3f km²\n>PIB: R$%.2f\n>Pontos de turismo: %d\n\n",
-  estado2, cidade2, codCarta2, populacao2, area2, pib2, turismo2 );
+  printf("Sua segunda carta!\n>Estado: %s\n>Cidade: %s\n>Código: %s\n>População: %d\n>Área: %.3f km²\n>PIB: R$%.2f\n>Pontos de turismo: %d\n>Densidade populacional:%.2f Hab/km²\nPIB per Carpita:R$%.2f\n\n",
+  estado2, cidade2, codCarta2, populacao2, area2, pib2, turismo2, densidadePop2, pibCapita2);
 
 return 0;
 } 
