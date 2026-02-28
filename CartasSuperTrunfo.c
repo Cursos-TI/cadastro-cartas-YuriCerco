@@ -92,58 +92,85 @@ int main() {
   estado2, cidade2, codCarta2, populacao2, area2, pib2, turismo2, densidadePop2, pibCapita2, superPoder2);
 
   //comparaçao
+    int escolhaComparacao;
 
-  printf("Comparação de cada ponto das cartas\n");
-
+    printf("Hora de comparar as cartas!\n");
+    printf("1. População\n");
+    printf("2. Área\n");
+    printf("3. PIB\n");
+    printf("4. Pontos de turismo\n");
+    printf("5. Densidade populacional\n");
+    printf("6. PibperCapita\n");
+    printf("7. SuperPoder\n");
+    printf("Escolha um parâmetro de comparação\n");
+    scanf("%d", &escolhaComparacao);
+  
+    switch(escolhaComparacao){
+      case 1:
   printf("Populaçao:\n");
   if(populacao > populacao2){
     printf("A primeira carta tem %ld/////A segunda carta tem %ld\n Carta um vence!\n", populacao, populacao2);
   } else{
     printf("A primeira carta tem %ld/////A segunda carta tem %ld\n Carta dois vence!\n", populacao, populacao2);
-  }
+  } 
+  break;
   
+  case 2:
   printf("Área:\n");
   if(area > area2){
     printf("A primeira carta tem %.2lf/////A segunda carta tem %.2lf\nCarta um vence!\n", area, area2);
   } else{
     printf("A primeira carta tem %.2lf/////A segunda carta tem %.2lf\n Carta dois vence!\n", area, area2);
   }
+  break;
 
+  case 3:
   printf("PIB:\n");
   if(pib > pib2){
     printf("A primeira carta tem %.2lf/////A segunda carta tem %.2lf\nCarta um vence!\n", pib , pib2);
   } else{
     printf("A primeira carta tem %.2lf/////A segunda carta tem %.2lf\n Carta dois vence!\n", pib, pib2);
   }
+  break;
 
+  case 4:
   printf("Pontos de turismo:\n");
   if(turismo > turismo2){
     printf("A primeira carta tem %d/////A segunda carta tem %d\nCarta um vence!\n", turismo, turismo2);
   } else{
     printf("A primeira carta tem %d/////A segunda carta tem %d\n Carta dois vence!\n", turismo, turismo2);
   }
+  break;
 
+  case 5:
   printf("Densidade populacional:\n");
   if(densidadePop < densidadePop2){
     printf("A primeira carta tem %.2lf/////A segunda carta tem %.2lf\nCarta um vence!\n", densidadePop, densidadePop2);
   } else{
     printf("A primeira carta tem %.2lf/////A segunda carta tem %.2lf\n Carta dois vence!\n", densidadePop, densidadePop2);
   }
+  break;
   
+  case 6:
   printf("PIB per capita:\n");
   if(pibCapita > pibCapita2){
     printf("A primeira carta tem %.2lf/////A segunda carta tem %.2lf\nCarta um vence!\n", pibCapita, pibCapita2);
   } else{
     printf("A primeira carta tem %.2lf/////A segunda carta tem %.2lf\n Carta dois vence!\n", pibCapita, pibCapita2);
   }
+  break;
 
+  case 7:
   printf("SuperPoder:\n");
   if(superPoder > superPoder2){
     printf("A primeira carta tem %.2lf/////A segunda carta tem %.2lf\nCarta um vence!\n", superPoder, superPoder2);
   } else{
     printf("A primeira carta tem %.2lf/////A segunda carta tem %.2lf\n Carta dois vence!\n", superPoder, superPoder2);
   }
+  break;
 
-  printf("%s", codigoCarta);
+  default:
+  printf("Opçao invalida");
+}
 return 0;
 } 
